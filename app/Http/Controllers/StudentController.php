@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\Activity;
 
 class StudentController extends Controller
 {
     function show($id)
     {
-        $students = Teacher::find($id)->students;
-        return view('example', ['students' => $students]);
+        // $activity = Activity::find($id);
+        // $students = $activity->students;
+        // return view('example', ['activity' => $activity, 'students' => $students]);
+        $students = Student::find($id);
+        $activities = $students->activities;
+        return view('example', ['activities' => $activities, 'students' => $students]);
     }
 }

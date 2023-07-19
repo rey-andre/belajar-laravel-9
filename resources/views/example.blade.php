@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <p>Your students:</p>
-    @foreach ($students as $student)
-    <p>{{ $student->name }}</p>
+    <p>{{ $students->name }}:</p>
+    @foreach ($activities as $activity)
+    <p>{{ $activity->name }}</p>
     @endforeach
 </body>
 
