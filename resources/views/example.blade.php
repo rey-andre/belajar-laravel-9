@@ -8,7 +8,10 @@
 </head>
 
 <body>
-    <p>Your address is {{ $address }}</p>
+    <p>Your students:</p>
+    @foreach ($students as $student)
+    <p>{{ $student->name }}</p>
+    @endforeach
 </body>
 
 </html>
