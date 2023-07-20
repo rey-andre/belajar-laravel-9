@@ -8,8 +8,12 @@
 </head>
 
 <body>
-    <p>{{ $students->name }}:</p>
-    @foreach ($activities as $activity)
+    <p>Id : {{ $student->id }}</p>
+    <p>Name : {{ $student->name }}:</p>
+    <p>Score :{{ $student->score }}</p>
+    <br>
+    <p>Activities</p>
+    @foreach ($student->activities as $activity)
         <p>{{ $activity->name }}</p>
     @endforeach
 </body>
