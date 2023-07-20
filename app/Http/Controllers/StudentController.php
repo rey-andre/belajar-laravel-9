@@ -54,4 +54,19 @@ class StudentController extends Controller
 
         return Redirect::route('index');
     }
+
+    public function edit(Student $student)
+    {
+        return view('edit', compact('student'));
+    }
+
+    public function update(Request $request, Student $student)
+    {
+        $student->update([
+            'name' => $request->name,
+            'score' => $request->score
+        ]);
+
+        return Redirect::route('index');
+    }
 }
