@@ -11,8 +11,15 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $students = Student::all();
-        return view('index', ['students' => $students]);
+        // $students = Student::all();
+        $students = Student::paginate(2);
+        return view('index', ['data' => $students]);
+    }
+
+    public function filter()
+    {
+        Student::where('score', '>=', 92)->get();
+        return view('filter', compact('students'));
     }
 
     function show($id)
