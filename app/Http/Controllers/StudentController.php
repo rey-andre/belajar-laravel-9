@@ -18,7 +18,9 @@ class StudentController extends Controller
 
     public function filter()
     {
-        Student::where('score', '>=', 92)->get();
+        $students = Student::where('score', '>=', 85)
+            ->where('name', 'LIKE', '%a%')
+            ->get();
         return view('filter', compact('students'));
     }
 

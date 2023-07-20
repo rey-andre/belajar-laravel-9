@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Models\Student;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,5 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', [StudentController::class, 'index']);
+Route::get('/filter', [StudentController::class, 'filter']);
 Route::get('/greeting/{id}', [StudentController::class, 'show']);
